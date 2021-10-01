@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+// Create an interactive program that allows a user to guess a number between 1-10.
+//If option 1 is selected the program should prompt the user to enter a number. 
+// If option 2 is chosen, then tell them the max value they can set the number. Make sure they do not enter a negative number or go above the max value.
+// If option 3 is chosen thank the user for playing and end the game.
 void mainMenu(){
 
+    //declare the int variables
     int num, random, numPicked, i, n;
     
+    //initialize the max value at start
     int max = 10;
 
    
@@ -20,6 +25,7 @@ void mainMenu(){
      
          mainMenu();  
     }
+    //If 2 is selected, case 2 is entered and allows you to change the max value
     case 2: {
         printf("Enter a max value: ");
         scanf("%d", &max);
@@ -31,6 +37,7 @@ void mainMenu(){
         }
         break;
     }
+    //If 3 is selected, case 3 is entered and exits the game
     case 3: {
         printf("Game will exit. Thanks for playing!");
         exit(0);
@@ -40,7 +47,7 @@ void mainMenu(){
 return;
     }
 }
- 
+    //main calls the main game recursively until user exits game
     int main(){
         mainMenu();
     }
